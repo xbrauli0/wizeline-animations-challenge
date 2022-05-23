@@ -4,13 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewPropertyAnimator
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.wizeline.academy.animations.databinding.SplashFragmentBinding
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class SplashFragment : Fragment() {
 
@@ -28,9 +25,50 @@ class SplashFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        lifecycleScope.launch {
-            delay(2000)
-            goToHomeScreen()
+        buildAnimation()
+//        lifecycleScope.launch {
+//            delay(2000)
+//            goToHomeScreen()
+//        }
+    }
+
+    private fun buildAnimation() {
+//        val aparecer = ObjectAnimator.ofFloat(binding.ivWizelineLogo,"alpha",1f)
+//        val crecerX = ObjectAnimator.ofFloat(binding.ivWizelineLogo,"scaleX",3f)
+//        val crecerY = ObjectAnimator.ofFloat(binding.ivWizelineLogo,"scaleY",3f)
+//        val animSet1 = AnimatorSet()
+//        animSet1.duration = 1000
+//        animSet1.playTogether(aparecer,crecerX,crecerY)
+//        animSet1.start()
+//
+//        val restablecerX = ObjectAnimator.ofFloat(binding.ivWizelineLogo,"scaleX",1f)
+//        val restablecerY = ObjectAnimator.ofFloat(binding.ivWizelineLogo,"scaleY",1f)
+//        val animSet2 = AnimatorSet()
+//        animSet2.duration = 1000
+//        animSet2.playTogether(restablecerX,restablecerY)
+//
+//        animSet1.doOnEnd {
+//            animSet2.start()
+//        }
+        binding.ivWizelineLogo.animate().apply {
+            duration = 1000
+            alpha(1f)
+            scaleX(3f)
+            scaleY(3f)
+            withEndAction {
+                animation2(this)
+            }
+        }
+    }
+
+    private fun animation2(viewPropertyAnimator: ViewPropertyAnimator) {
+        with(viewPropertyAnimator) {
+            duration = 1000
+            scaleX(1f)
+            scaleY(1f)
+            withEndAction {
+                goToHomeScreen()
+            }
         }
     }
 
