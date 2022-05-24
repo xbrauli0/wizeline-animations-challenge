@@ -7,13 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <View
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_rawRes="@raw/lf30_editor_j9rbpz8l"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvImages"

@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">AnimationsDemoWizelineAcademy</string>
+    <string name="item_image_trans">item_image_trans</string>
+    <string name="item_title_trans">item_title_trans</string>
+    <string name="item_description_trans">item_description_trans</string>
 </resources>

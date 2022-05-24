@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import androidx.transition.TransitionInflater
 import com.wizeline.academy.animations.databinding.MoreDetailsFragmentBinding
 import com.wizeline.academy.animations.utils.loadImage
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,6 +22,15 @@ class MoreDetailsFragment : Fragment() {
     lateinit var viewModel: MoreDetailsViewModel
 
     private val args: MoreDetailsFragmentArgs by navArgs()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        checkNotNull(activity)
+        sharedElementReturnTransition = TransitionInflater.from(activity!!).inflateTransition(android.R.transition.slide_right);
+        sharedElementEnterTransition = TransitionInflater.from(activity!!).inflateTransition(android.R.transition.move)
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
