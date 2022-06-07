@@ -1,5 +1,7 @@
 package com.wizeline.academy.animations.core.data.repository
 
+import com.wizeline.academy.animations.ui.home.HomeItem
+import com.wizeline.academy.animations.ui.home.homeItem
 import javax.inject.Inject
 import kotlin.random.Random
 
@@ -32,13 +34,18 @@ class HomeRepository @Inject constructor() {
         1025
     )
 
-    fun fetchMockedImages(): List<Int> {
-        val images = mutableListOf<Int>()
+    fun fetchMockedImages(): List<HomeItem> {
+        val items = mutableListOf<HomeItem>()
         for (i in 1..10) {
-            val randomId = getRandomId()
-            images += randomId
+            val item = createNewHomeItem()
+            items += item
         }
-        return images
+        return items
+    }
+
+    private fun createNewHomeItem(): HomeItem {
+        val randomId = getRandomId()
+        return homeItem { imageId = randomId }
     }
 
     private fun getRandomId(): Int {

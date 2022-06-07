@@ -1,18 +1,14 @@
 package com.wizeline.academy.animations.ui.home
 
-import android.view.View
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.wizeline.academy.animations.R
+import com.wizeline.academy.animations.databinding.ItemImageBinding
 import com.wizeline.academy.animations.utils.loadImage
 
-class HomeViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+class HomeViewHolder(private val binding: ItemImageBinding) :
+    RecyclerView.ViewHolder(binding.root) {
 
-    private val ivImage = view.findViewById<ImageView>(R.id.ivImage)
-
-    fun bind(imageId: Int, onClickListener: (Int) -> Unit) {
-        view.setOnClickListener { onClickListener.invoke(imageId) }
-        ivImage.loadImage(imageId)
+    fun bind(item: HomeItem, onClickListener: (HomeItem) -> Unit) {
+        binding.root.setOnClickListener { onClickListener.invoke(item) }
+        binding.ivImage.loadImage(item.imageId)
     }
 }

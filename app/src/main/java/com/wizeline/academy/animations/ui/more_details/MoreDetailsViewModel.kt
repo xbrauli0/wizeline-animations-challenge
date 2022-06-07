@@ -2,10 +2,14 @@ package com.wizeline.academy.animations.ui.more_details
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.wizeline.academy.animations.core.data.repository.LoreIpsumRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-class MoreDetailsViewModel @Inject constructor(private var repository: LoreIpsumRepository) {
+@HiltViewModel
+class MoreDetailsViewModel @Inject constructor(private var repository: LoreIpsumRepository) :
+    ViewModel() {
 
     val title: LiveData<String>
         get() = _title

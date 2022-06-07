@@ -5,21 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.wizeline.academy.animations.databinding.MoreDetailsFragmentBinding
 import com.wizeline.academy.animations.utils.loadImage
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MoreDetailsFragment : Fragment() {
 
     private var _binding: MoreDetailsFragmentBinding? = null
     private val binding get() = _binding!!
-
-    @Inject
-    lateinit var viewModel: MoreDetailsViewModel
-
+    private val viewModel: MoreDetailsViewModel by viewModels()
     private val args: MoreDetailsFragmentArgs by navArgs()
 
     override fun onCreateView(
