@@ -7,9 +7,9 @@
 
     <ImageView
         android:id="@+id/ivImageDetail"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_margin="20dp"
+        android:layout_width="@dimen/detail_image_size"
+        android:layout_height="@dimen/detail_image_size"
+        android:layout_margin="@dimen/detail_image_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/sample_img" />
@@ -18,10 +18,12 @@
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="@dimen/detail_title_margin"
+        android:layout_marginTop="@dimen/detail_title_margin"
+        android:layout_marginEnd="@dimen/detail_title_margin"
         android:maxLines="1"
-        android:textSize="16sp"
+        android:textSize="@dimen/detail_title_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ivImageDetail"
         app:layout_constraintTop_toTopOf="@id/ivImageDetail"
         tools:text="Lorem Ipsum" />
@@ -30,8 +32,8 @@
         android:id="@+id/tvSubtitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="@dimen/detail_subtitle_margin_top"
+        android:layout_marginEnd="@dimen/detail_subtitle_margin_end"
         android:ellipsize="end"
         android:maxLines="2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +45,7 @@
         android:id="@+id/btnMoreDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimen/detail_button_margin"
         android:text="More details"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

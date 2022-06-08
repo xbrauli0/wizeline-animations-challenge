@@ -9,17 +9,17 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/home_lottie_width"
+        android:layout_height="@dimen/home_lottie_height"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvImages"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="@dimen/home_rv_width"
+        android:layout_height="@dimen/home_rv_height"
+        android:layout_marginTop="@dimen/home_rv_margin_top"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
