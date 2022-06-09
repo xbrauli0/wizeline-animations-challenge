@@ -34,19 +34,9 @@ class HomeRepository @Inject constructor() {
         1025
     )
 
-    fun fetchMockedImages(): List<HomeItem> {
-        val items = mutableListOf<HomeItem>()
-        for (i in 1..10) {
-            val item = createNewHomeItem()
-            items += item
-        }
-        return items
-    }
+    fun fetchMockedImages(): List<HomeItem> = (1..10).map { createNewHomeItem() }
 
-    private fun createNewHomeItem(): HomeItem {
-        val randomId = getRandomId()
-        return homeItem { imageId = randomId }
-    }
+    private fun createNewHomeItem(): HomeItem = homeItem { imageId = getRandomId() }
 
     private fun getRandomId(): Int {
         val index = Random.nextInt(0, ids.size - 1)
