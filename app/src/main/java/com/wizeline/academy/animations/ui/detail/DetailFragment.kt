@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.wizeline.academy.animations.databinding.DetailFragmentBinding
@@ -17,11 +18,8 @@ class DetailFragment : Fragment() {
 
     private var _binding: DetailFragmentBinding? = null
     private val binding get() = _binding!!
-
+    private val viewModel: DetailViewModel by viewModels()
     private val args: DetailFragmentArgs by navArgs()
-
-    @Inject
-    lateinit var viewModel: DetailViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,

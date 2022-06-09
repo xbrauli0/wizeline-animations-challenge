@@ -4,9 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wizeline.academy.animations.core.data.repository.LoreIpsumRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlin.random.Random
 
+@HiltViewModel
 class DetailViewModel @Inject constructor(private var repository: LoreIpsumRepository) :
     ViewModel() {
 
